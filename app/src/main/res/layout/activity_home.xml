@@ -1,17 +1,19 @@
 <!-- res/layout/activity_home.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
     android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bienvenido a la Página Principal"
-        android:textSize="18sp"/>
-
-    <!-- Agrega otros elementos de la interfaz principal aquí -->
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonLogout"
@@ -23,5 +25,56 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:text="Cerrar Sesión"
-        tools:ignore="UnknownId" />
-</RelativeLayout>
+        tools:ignore="MissingConstraints,UnknownId" />
+
+
+    <!-- Agrega otros elementos de la interfaz principal aquí -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:rowCount="3">
+
+        <!-- Opción 1 -->
+        <ImageView
+            android:id="@+id/option1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:contentDescription="Option 1"
+            android:onClick="onOption1Click"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/ic_launcher_background"
+            android:textAlignment="textEnd" />
+
+        <!-- Opción 2 -->
+        <ImageView
+            android:id="@+id/option2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:contentDescription="Option 2"
+            android:onClick="onOption2Click"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <!-- Opción 3 -->
+        <ImageView
+            android:id="@+id/option3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:contentDescription="Option 3"
+            android:onClick="onOption3Click"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/ic_launcher_background" />
+
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
