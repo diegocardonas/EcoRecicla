@@ -1,38 +1,29 @@
-<!-- res/layout/activity_main.xml -->
+<!-- res/layout/activity_register.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextRegisterUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre de Usuario"/>
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextRegisterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUsername"
+        android:layout_below="@id/editTextRegisterUsername"
         android:layout_marginTop="8dp"
         android:hint="Contraseña"
         android:inputType="textPassword"/>
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword"
+        android:layout_below="@id/editTextRegisterPassword"
         android:layout_marginTop="16dp"
-        android:text="Iniciar Sesión"/>
-
-    <TextView
-        android:id="@+id/textViewRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonLogin"
-        android:layout_marginTop="8dp"
-        android:text="¿No tienes cuenta? Regístrate aquí"
-        android:textColor="@android:color/holo_blue_dark"/>
+        android:text="Registrarse"/>
 </RelativeLayout>
