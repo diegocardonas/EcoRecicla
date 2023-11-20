@@ -1,3 +1,2 @@
 # EcoRecicla
-
-** Inicio del proyecto 20-11-2023
+** Inicio del proyecto 20-11-2023 **
