@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static final int SPLASH_TIME_OUT = 2000; // Duración de la pantalla de presentación en milisegundos
+    private static final int SPLASH_TIME_OUT = 2500; // Duración de la pantalla de presentación en milisegundos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
