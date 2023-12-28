@@ -35,23 +35,18 @@ public class MainActivity extends AppCompatActivity {
                 String username = editTextUsername.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
 
-                // Validaciones
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-                    Toast.makeText(MainActivity.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Debes completar todos los campos primero", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Verificar credenciales con el archivo "usuarios.txt"
                     if (validateCredentials(username, password)) {
-                        // Credenciales válidas, ir a la página principal
                         startActivity(new Intent(MainActivity.this, HomeActivity.class));
                     } else {
-                        // Credenciales no válidas
-                        Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
 
-        // Agregado para ir a la página de registro
         textViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Método para validar credenciales
     private boolean validateCredentials(String enteredUsername, String enteredPassword) {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(getFileStreamPath("usuarios.txt")));
@@ -70,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 String username = parts[0].trim();
                 String password = parts[1].trim();
 
-                // Verificar si las credenciales coinciden con alguna línea en el archivo
                 if (enteredUsername.equals(username) && enteredPassword.equals(password)) {
                     bufferedReader.close();
                     return true;
