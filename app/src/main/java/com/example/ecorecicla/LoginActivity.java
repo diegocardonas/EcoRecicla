@@ -1,9 +1,8 @@
 package com.example.ecorecicla;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-// MainActivity.java
+// LoginActivity.java
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,17 +16,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         final EditText editTextUsername = findViewById(R.id.editTextUsername);
         final EditText editTextPassword = findViewById(R.id.editTextPassword);
         Button buttonLogin = findViewById(R.id.buttonLogin);
         TextView textViewRegister = findViewById(R.id.textViewRegister);
+        TextView textViewForgot = findViewById(R.id.textViewForgot);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-                    Toast.makeText(MainActivity.this, "Debes completar todos los campos primero", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Debes completar todos los campos primero", Toast.LENGTH_SHORT).show();
                 } else {
                     if (validateCredentials(username, password)) {
-                        startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     } else {
-                        Toast.makeText(MainActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -50,9 +50,18 @@ public class MainActivity extends AppCompatActivity {
         textViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
+
+        textViewForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+            }
+        });
+
+
     }
 
     private boolean validateCredentials(String enteredUsername, String enteredPassword) {

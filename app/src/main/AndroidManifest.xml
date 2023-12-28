@@ -13,28 +13,43 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="31">
         <activity
+            android:name=".CategoryDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        </activity>
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        </activity>
-
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:label="Restablecer Contraseña"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".StatisticsActivity"
+            android:label="Estadísticas"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".TipsActivity"
+            android:label="Consejos"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".CategoryDetailsActivity.CategoriesActivity"
+            android:label="Categorías"
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>

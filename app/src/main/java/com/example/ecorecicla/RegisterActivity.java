@@ -1,6 +1,5 @@
 package com.example.ecorecicla;
 
-// RegisterActivity.java
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,7 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Registro"); // Cambia el título según tus necesidades
+            actionBar.setTitle("Registro");
         }
 
         final EditText editTextRegisterUsername = findViewById(R.id.editTextRegisterUsername);
@@ -47,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
                     if (registerUser(username, password)) {
                         // Registro exitoso, por ahora simplemente regresamos a la página de inicio de sesión
-                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                     } else {
                         // Manejar el caso en que el registro falla
                         Toast.makeText(RegisterActivity.this, "Error en el registro", Toast.LENGTH_SHORT).show();

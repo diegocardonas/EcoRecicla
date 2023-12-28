@@ -1,5 +1,6 @@
 <!-- res/layout/activity_register.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
@@ -9,22 +10,43 @@
         android:id="@+id/editTextRegisterUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de Usuario"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Nombre de Usuario"
+        android:textColorHint="#78909C"
+        android:textSize="20sp"
+        tools:ignore="Autofill,HardcodedText,TextFields,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/editTextRegisterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextRegisterUsername"
-        android:layout_marginTop="8dp"
-        android:hint="Contraseña"
-        android:inputType="textPassword"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="25dp"
+        android:hint="@string/contrase_a"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        tools:ignore="VisualLintTextFieldSize"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextRegisterPassword"
-        android:layout_marginTop="16dp"
-        android:text="Registrarse"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/registrarse"
+        tools:ignore="VisualLintButtonSize" />
 </RelativeLayout>
