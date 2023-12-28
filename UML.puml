@@ -1,0 +1,61 @@
+@startuml
+
+!define RECTANGLE class
+!define SCREEN <<RECTANGLE>>
+
+class SplashScreen {
+  + onCreate(Bundle): void
+  - navigateToLogin(): void
+}
+
+class LoginActivity {
+  + onCreate(Bundle): void
+  + loginUser(String, String): void
+  - navigateToRegister(): void
+  - navigateToResetPassword(): void
+}
+
+class RegisterActivity {
+  + onCreate(Bundle): void
+  + registerUser(String, String): void
+  - navigateToLogin(): void
+}
+
+class ResetPasswordActivity {
+  + onCreate(Bundle): void
+  + resetPassword(String): void
+  - navigateToLogin(): void
+}
+
+class HomeActivity {
+  + onCreate(Bundle): void
+  - navigateToCategories(): void
+  - navigateToStatistics(): void
+  - navigateToTips(): void
+  + closeSession(): void
+}
+
+class CategoriesActivity {
+  + onCreate(Bundle): void
+}
+
+class StatisticsActivity {
+  + onCreate(Bundle): void
+}
+
+class TipsActivity {
+  + onCreate(Bundle): void
+}
+
+SplashScreen --> LoginActivity: navigateToLogin
+LoginActivity --> RegisterActivity: navigateToRegister
+LoginActivity --> ResetPasswordActivity: navigateToResetPassword
+LoginActivity --> HomeActivity
+RegisterActivity --> LoginActivity: navigateToLogin
+ResetPasswordActivity --> LoginActivity: navigateToLogin
+HomeActivity --> CategoriesActivity: navigateToCategories
+HomeActivity --> StatisticsActivity: navigateToStatistics
+HomeActivity --> TipsActivity: navigateToTips
+HomeActivity --> SplashScreen: closeSession
+
+@enduml
